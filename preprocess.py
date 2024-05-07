@@ -10,65 +10,52 @@ def list_nii_files(directory):
     return [os.path.join(directory, f) for f in os.listdir(directory)]
 
 class NiiDataset(Dataset):
-    def __init__(self, directory, transforms=None):
-        self.data_paths = list_nii_files(directory)
+    def __init__(self, directory,transforms=None):
+        '''
+        directory: should be MICCAI_BraTS_2019_Data_Training/HGG or LGG
+        '''
+        self.data_paths = list_nii_files(directory) #data_paths should be a list of things like MICCAI_BraTS_2019_Data_Training/HGG/BraTS19_2013_2_1 
         self.transforms = transforms
-        self.cache = {}
+        #self.seg_masks, self.data = self.getAllItem() #get all data
+        self.current_folder = None
+        self.seg_data = None
+        self.combined_array = None
 
     def __len__(self):
-        return len(self.data_paths) * 155
-
+        return len(self.data_paths)*155
+    
     def __getitem__(self, idx):
-        folder_idx = idx // 155
-        slice_idx = idx % 155
-        folder_path = self.data_paths[folder_idx]
-        
-        if folder_path not in self.cache:
-            self.cache[folder_path] = self.load_folder_data(folder_path)
-        
-        data, seg = self.cache[folder_path][slice_idx]
-
-        if self.transforms:
-            data = self.transforms(data)
-            seg = self.transforms(seg)
-
-        return torch.as_tensor(data, dtype=torch.float32), torch.as_tensor(seg, dtype=torch.float32)
-
-    def load_folder_data(self, folder_path):
-        nii_files = list_nii_files(folder_path)
-        img_data = []
-        seg_data = None
-        
-        for file_name in nii_files:
-            nii = nib.load(file_name)
-            nii_data = nii.get_fdata().transpose((2, 0, 1))  # (155, 240, 240)
-
-            if 'seg' in file_name:
-                seg_data = nii_data
-            else:
-                img_data.append(nii_data)
-
-        combined_array = np.stack(img_data, axis=-1)  # (155, 240, 240, 4)
-        return [(combined_array[i], seg_data[i]) for i in range(155)]
-
-        
-
-HGG_directory = 'MICCAI_BraTS_2019_Data_Training/HGG'
-HGG_dataset = NiiDataset(HGG_directory)
-HGG_dataloader =  DataLoader(HGG_dataset, batch_size=64, shuffle=True)
-train_features, train_labels = next(iter(HGG_dataloader))
-print(f"Feature batch shape: {train_features.size()}")
-print(f"Feature batch shape: {train_labels.size()}")
-#mask_slice = seg[:, :, slice_index]
-image_slice = train_features[0,:, :, 0]
-plt.imshow(image_slice, cmap='gray')
-plt.show()
-image_slice = train_features[0,:, :, 1]
-plt.imshow(image_slice, cmap='gray')
-plt.show()
-image_slice = train_features[0,:, :, 2]
-plt.imshow(image_slice, cmap='gray')
-plt.show()
-image_slice = train_features[0,:, :, 3]
-plt.imshow(image_slice, cmap='gray')
-plt.show()
+        '''
+        Get one 2d item from the dataset
+        Return: data          #ndarray (1,240,240)
+                seg_mask      #ndarray (1,240,240,4)
+        '''
+        # seg_mask = self.seg_masks[idx]
+        # data = self.data[idx]
+        index = idx//155 #get the index for the folder so that idx can be seen as index for each image
+        folder_path = self.data_paths[index] #get the specific folder path
+        if folder_path != self.current_folder:
+            #if it is a new folder
+            nii_files = list_nii_files(folder_path) #get the list of nii files
+            img_data = []
+            for i in range(len(nii_files)):
+                file_name = nii_files[i]
+                nii = nib.load(file_name)
+                nii_data = nii.get_fdata() #should have shape (240, 240, 155)
+                nii_data = nii_data.transpose((2,0,1)) #should have shape (155, 240, 240)
+                #get the segmentation mask out
+                if "seg" in file_name:
+                    self.seg_data = nii_data
+                else:
+                    #append all other file into the same list
+                    img_data.append(nii_data)
+            self.combined_array = np.stack(img_data, axis=-1)#stack all img_data together should have shape (155,240,240,4)
+        res_data = self.combined_array[idx%155]
+        res_data = np.transpose(res_data,[2,0,1])
+        res_seg = self.seg_data[idx%155]
+        # if self.transforms:
+        #     #augmentation
+        #     seg_mask = self.transform(seg_mask)
+        #     data = self.transform(data)
+        return {'image': torch.as_tensor(res_data), 
+        'mask': torch.as_tensor(res_seg)}
