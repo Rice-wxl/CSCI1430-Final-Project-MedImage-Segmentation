@@ -27,6 +27,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
+from torch.utils.data import DataLoader
+from preprocess import NiiDataset
+
 def main():
 
     ## All the arguments
@@ -81,21 +84,16 @@ def main():
 
     ## Loading the data and the validation data. The data is arleady batched.
     data = load_data(
-        data_dir=args.data_dir,
-        batch_size=args.batch_size,
-        image_size=args.image_size,
-        class_cond=args.class_cond
+        batch_size=args.batch_size
     )
-    val_dataset = VaihDataset(
-        mode='val',
-        image_size=args.image_size,
-        shard=MPI.COMM_WORLD.Get_rank(),
-        num_shards=MPI.COMM_WORLD.Get_size(),
+
+    val_dataset = NiiDataset(
+        directory="..."
     )
 
     logger.log(f"gpu {MPI.COMM_WORLD.Get_rank()} / {MPI.COMM_WORLD.Get_size()} val length {len(val_dataset)}")
 
-    ## Training the model
+    ## Training the data.
     logger.log("training...")
     TrainLoop(
         model=model,
@@ -122,6 +120,35 @@ def main():
         # dist_util=dist_util,
     ).run_loop(max_iter=300000, start_print_iter=args.start_print_iter)
 
+def load_data(
+    *, batch_size, deterministic=False
+):
+    """
+    For a dataset, create a generator over (images, kwargs) pairs.
+
+    Each images is an NCHW float tensor, and the kwargs dict contains zero or
+    more keys, each of which map to a batched Tensor of their own.
+    The kwargs dict can be used for class labels, in which case the key is "y"
+    and the values are integer tensors of class labels.
+
+    :param data_dir: a dataset directory.
+    :param batch_size: the batch size of each returned pair.
+    :param deterministic: if True, yield results in a deterministic order.
+    """
+    dataset = NiiDataset(
+        directory="..."
+    )
+
+    if deterministic:
+        loader = DataLoader(
+            dataset, batch_size=batch_size, shuffle=False, num_workers=0, drop_last=True
+        )
+    else:
+        loader = DataLoader(
+            dataset, batch_size=batch_size, shuffle=True, num_workers=0, drop_last=True
+        )
+    while True:
+        yield from loader
 
 def create_argparser():
     defaults = dict(
