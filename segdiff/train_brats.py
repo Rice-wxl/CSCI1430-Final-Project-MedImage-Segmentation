@@ -28,7 +28,7 @@ warnings.filterwarnings('ignore')
 
 
 from torch.utils.data import DataLoader
-from preprocess import NiiDataset
+from preprocess_segdiff import NiiDataset
 
 def main():
 
@@ -82,13 +82,17 @@ def main():
 
     logger.log("creating data loader...")
 
+    dataset = NiiDataset(
+        directory="..."
+    )
+    val_percent = 0.1
+    n_val = int(len(dataset) * val_percent)
+    n_train = len(dataset) - n_val
+    train_dataset, val_dataset = 
+
     ## Loading the data and the validation data. The data is arleady batched.
     data = load_data(
-        batch_size=args.batch_size
-    )
-
-    val_dataset = NiiDataset(
-        directory="..."
+        batch_size=args.batch_size, dataset=train_dataset
     )
 
     logger.log(f"gpu {MPI.COMM_WORLD.Get_rank()} / {MPI.COMM_WORLD.Get_size()} val length {len(val_dataset)}")
@@ -121,7 +125,7 @@ def main():
     ).run_loop(max_iter=300000, start_print_iter=args.start_print_iter)
 
 def load_data(
-    *, batch_size, deterministic=False
+    *, batch_size, dataset, deterministic=False
 ):
     """
     For a dataset, create a generator over (images, kwargs) pairs.
@@ -135,9 +139,6 @@ def load_data(
     :param batch_size: the batch size of each returned pair.
     :param deterministic: if True, yield results in a deterministic order.
     """
-    dataset = NiiDataset(
-        directory="..."
-    )
 
     if deterministic:
         loader = DataLoader(

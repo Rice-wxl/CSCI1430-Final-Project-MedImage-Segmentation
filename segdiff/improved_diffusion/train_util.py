@@ -196,10 +196,14 @@ class TrainLoop:
             pbar = tqdm()
         while (
             self.step < max_iter
-        ):
+        ):  
+            print("1")          
             self.ddp_model.train()
+            print("2")
             batch, cond, _ = next(self.data)
+            print("3")
             self.run_step(batch, cond)
+            print("4")
             if dist.get_rank() == 0:
                 pbar.update(1)
             if self.step % self.log_interval == 0 and self.step != 0:
@@ -247,10 +251,14 @@ class TrainLoop:
 
                 set_random_seed_for_iterations(MPI.COMM_WORLD.Get_rank() + self.step)
                 dist.barrier()
+            logger.log(f"finished step {self.step}")
             self.step += 1
 
     def run_step(self, batch, cond):
         self.forward_backward(batch, cond)
+
+        assert 1 == 2
+
         if self.use_fp16:
             self.optimize_fp16()
         else:
@@ -259,14 +267,22 @@ class TrainLoop:
 
     def forward_backward(self, batch, cond):
         zero_grad(self.model_params)
-        for i in range(0, batch.shape[0], self.microbatch):
+        print(f"batch size: {batch.shape[0]}")
+        print(f"microbatch: {self.microbatch}")
+        
+        for i in tqdm(range(0, batch.shape[0], self.microbatch)):
+            logger.log(f"a")
             micro = batch[i : i + self.microbatch].to(dist_util.dev())
+            logger.log(f"b")
             micro_cond = {
                 k: v[i : i + self.microbatch].to(dist_util.dev())
                 for k, v in cond.items()
             }
+            logger.log(f"c")
             last_batch = (i + self.microbatch) >= batch.shape[0]
+            logger.log(f"d")
             t, weights = self.schedule_sampler.sample(micro.shape[0], dist_util.dev())
+            logger.log(f"e")
 
             compute_losses = functools.partial(
                 self.diffusion.training_losses,
@@ -275,17 +291,20 @@ class TrainLoop:
                 t,
                 model_kwargs=micro_cond,
             )
+            logger.log(f"f")
 
             if last_batch or not self.use_ddp:
                 losses = compute_losses()
             else:
                 with self.ddp_model.no_sync():
                     losses = compute_losses()
+            logger.log(f"g")
 
             if isinstance(self.schedule_sampler, LossAwareSampler):
                 self.schedule_sampler.update_with_local_losses(
                     t, losses["loss"].detach()
                 )
+            logger.log(f"h")
 
             loss = (losses["loss"] * weights).mean()
             log_loss_dict(

@@ -1,0 +1,25 @@
+0it [00:00, ?it/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/image_train_diff_vaih.py", line 152, in <module>
+[rank0]:     main()
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/image_train_diff_vaih.py", line 100, in main
+[rank0]:     TrainLoop(
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/train_util.py", line 201, in run_loop
+[rank0]:     batch, cond, _ = next(self.data)
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/datasets/vaih.py", line 51, in load_data
+[rank0]:     yield from loader
+[rank0]:   File "/users/xwang259/.conda/envs/segdiff/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/users/xwang259/.conda/envs/segdiff/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+[rank0]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank0]:   File "/users/xwang259/.conda/envs/segdiff/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/users/xwang259/.conda/envs/segdiff/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/datasets/vaih.py", line 124, in __getitem__
+[rank0]:     img, mask = self.transformations(img, mask)
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/datasets/transforms.py", line 49, in __call__
+[rank0]:     img, mask = t(img, mask)
+[rank0]:   File "/oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/datasets/transforms.py", line 502, in __call__
+[rank0]:     return F.affine(img, *ret, interpolation=Image.BILINEAR, fillcolor=self.fillcolor), \
+[rank0]: TypeError: affine() got an unexpected keyword argument 'fillcolor'
+0it [00:00, ?it/s]

@@ -499,8 +499,8 @@ class RandomAffine(object):
 
     def __call__(self, img, mask):
         ret = self.get_params(self.degrees, self.translate, self.scale, self.shear, img.size)
-        return F.affine(img, *ret, resample=Image.BILINEAR, fillcolor=self.fillcolor), \
-               F.affine(mask, *ret, resample=Image.NEAREST, fillcolor=self.fillcolor)
+        return F.affine(img, *ret, interpolation=Image.BILINEAR, fill=self.fillcolor), \
+               F.affine(mask, *ret, interpolation=Image.NEAREST, fill=self.fillcolor)
 
 class RandomAffineFromSet(object):
     def __init__(self, degrees, translate=None, scale=None, shear=None, resample=False, fillcolor=0):

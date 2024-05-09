@@ -1,0 +1,10 @@
+2024-05-08-23-05-14-254963  Logging to /oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-08-23-05-14-210407_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-08-23-05-14-255026  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-08-23-05-14-258492  log folder path: /oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-08-23-05-14-210407_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-08-23-05-14-294695  git commit hash 0d7ee529f98321ede3b5fdd7558895c8958946c0
+2024-05-08-23-05-14-294729  creating model and diffusion...
+2024-05-08-23-05-15-430331  creating data loader...
+2024-05-08-23-05-15-474827  gpu 0 / 4 val length 17
+2024-05-08-23-05-15-474851  training...
+2024-05-08-23-05-15-477116  model folder path
+2024-05-08-23-05-16-878909  Distributed training requires CUDA. Gradients will not be synchronized properly!

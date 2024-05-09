@@ -93,7 +93,6 @@ class VaihDataset(Dataset):
         if self.mode == 'train':
             self.data = h5py.File(
                 str(Path(__file__).absolute().parent.parent.parent / "data/Vaihingen/full_training_vaih.hdf5"), 'r')
-
         else:
             self.data = h5py.File(
                 str(Path(__file__).absolute().parent.parent.parent / "data/Vaihingen/full_test_vaih.hdf5"), 'r')
@@ -103,6 +102,10 @@ class VaihDataset(Dataset):
         self.imgs = self.data['imgs']
         self.img_list = list(self.imgs)[shard::num_shards]
         self.mask_list = list(self.mask)[shard::num_shards]
+        # if self.mode == 'train':
+        #     print(f"train data length: {len(self.img_list)}")
+        # else:
+        #     print(f"test data length: {len(self.img_list)}")
 
     def __len__(self):
         return len(self.img_list)
