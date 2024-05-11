@@ -82,6 +82,12 @@ def main():
 
     logger.log("creating data loader...")
 
+
+    ## Step 1: create dataset
+    ## Step 2: split to train and val
+    ## Step 3: create Dataloader for train
+    ## Step 4: feed in to Trainloop
+
     dataset = NiiDataset(
         directory="..."
     )
@@ -94,6 +100,8 @@ def main():
     data = load_data(
         batch_size=args.batch_size, dataset=train_dataset
     )
+
+    
 
     logger.log(f"gpu {MPI.COMM_WORLD.Get_rank()} / {MPI.COMM_WORLD.Get_size()} val length {len(val_dataset)}")
 

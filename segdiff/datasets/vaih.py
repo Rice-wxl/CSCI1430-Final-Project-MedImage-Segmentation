@@ -118,6 +118,8 @@ class VaihDataset(Dataset):
         img = img.astype(np.uint8)
         mask = mask.astype(np.uint8)
         img, mask = self.transformations(img, mask)
+        print(img.shape)
+        print(mask.shape)
         out_dict = {"conditioned_image": img}
         mask = (2 * mask - 1.0).unsqueeze(0)
         if self.small_image_size is not None:

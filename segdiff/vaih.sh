@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --time=12:00:00
-#SBATCH -p gpu --gres=gpu:2
+#SBATCH -p gpu --gres=gpu:1
 #SBATCH --constraint=ampere
-#SBATCH -n 2
+#SBATCH -n 1
 #SBATCH --mem=16G
 #SBATCH -J run_vaih
 #SBATCH -o run_vaih_%j.out
@@ -24,4 +24,4 @@ export APPTAINER_BINDPATH="/oscar/home/$USER,/oscar/scratch/$USER,/oscar/data"
 export PATH=$PATH:$PWD/pyenv/bin
 export export LD_LIBRARY_PATH=$PWD/pyenv/lib
 
-CUDA_VISIBLE_DEVICES=0,1 mpiexec -n 2 srun apptainer exec --nv /oscar/runtime/software/external/ngc-containers/pytorch.d/x86_64.d/pytorch-24.03-py3 python image_train_diff_vaih.py --lr 0.0001 --batch_size 4 --dropout 0.1 --rrdb_blocks 6 --diffusion_steps 100
+CUDA_VISIBLE_DEVICES=0,1 mpiexec -n 1 srun apptainer exec --nv /oscar/runtime/software/external/ngc-containers/pytorch.d/x86_64.d/pytorch-24.03-py3 python image_train_diff_vaih.py --lr 0.0001 --batch_size 4 --dropout 0.1 --rrdb_blocks 6 --diffusion_steps 100

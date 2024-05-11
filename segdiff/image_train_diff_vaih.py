@@ -92,8 +92,6 @@ def main():
         shard=MPI.COMM_WORLD.Get_rank(),
         num_shards=MPI.COMM_WORLD.Get_size(),
     )
-    logger.log(f"{data}")
-    logger.log(f"val data shape: {val_dataset}")
 
     logger.log(f"gpu {MPI.COMM_WORLD.Get_rank()} / {MPI.COMM_WORLD.Get_size()} val length {len(val_dataset)}")
 
