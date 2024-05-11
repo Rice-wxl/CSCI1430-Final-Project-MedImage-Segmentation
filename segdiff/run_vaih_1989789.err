@@ -1,0 +1,36 @@
+15:4: not a valid test operator:  
+15:4: not a valid test operator: 12.4
+21:4: not a valid test operator: (
+21:4: not a valid test operator: 535.129.03
+0it [00:00, ?it/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 182, in <module>
+[rank0]:     main()
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 104, in main
+[rank0]:     TrainLoop(
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/train_util.py", line 203, in run_loop
+[rank0]:     batch, cond = next(self.data)
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 154, in load_data
+[rank0]:     yield from loader
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 631, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+[rank0]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+[rank0]:     data = self.dataset.__getitems__(possibly_batched_index)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataset.py", line 419, in __getitems__
+[rank0]:     return [self.dataset[self.indices[idx]] for idx in indices]
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataset.py", line 419, in <listcomp>
+[rank0]:     return [self.dataset[self.indices[idx]] for idx in indices]
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/preprocess_segdiff.py", line 58, in __getitem__
+[rank0]:     res_data,res_seg = self.resize(res_data,res_seg)
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/datasets/transforms.py", line 88, in __call__
+[rank0]:     return F.resize(img, self.size, self.interpolation), F.resize(mask, self.size, Image.NEAREST)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torchvision/transforms/functional.py", line 455, in resize
+[rank0]:     _, image_height, image_width = get_dimensions(img)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torchvision/transforms/functional.py", line 79, in get_dimensions
+[rank0]:     return F_pil.get_dimensions(img)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torchvision/transforms/_functional_pil.py", line 31, in get_dimensions
+[rank0]:     raise TypeError(f"Unexpected type {type(img)}")
+[rank0]: TypeError: Unexpected type <class 'numpy.ndarray'>
+0it [00:00, ?it/s]
+srun: error: gpu2502: task 0: Exited with exit code 1

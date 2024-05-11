@@ -119,9 +119,11 @@ class VaihDataset(Dataset):
         mask = mask.astype(np.uint8)
         img, mask = self.transformations(img, mask)
         out_dict = {"conditioned_image": img}
+        print("shape:",img.shape)
         mask = (2 * mask - 1.0).unsqueeze(0)
         if self.small_image_size is not None:
             out_dict["low_res"] = F.interpolate(mask.unsqueeze(0), self.small_image_size, mode="nearest").squeeze(0)
+        
         return mask, out_dict, str(Path(cimage).stem)
 
 

@@ -1,0 +1,83 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1989832
+##  Job Name : run_vaih
+##  Nodelist : gpu2110
+##      CPUs : 1
+##  Mem/Node : 16384 MB
+## Directory : /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff
+##   Job Started : Sat May 11 05:03:57 PM EDT 2024
+###############################################################################
+2024-05-11-17-04-05-637689  Logging to /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-11-17-04-05-613350_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-11-17-04-05-637885  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-11-17-04-05-642616  log folder path: /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-11-17-04-05-613350_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-11-17-04-05-665354  git commit hash f32096a5e2e1bda9570225ccbea282d0d1233079
+2024-05-11-17-04-05-665443  creating model and diffusion...
+2024-05-11-17-04-06-891578  creating data loader...
+2024-05-11-17-04-06-900132  gpu 0 / 1 val length 4014
+2024-05-11-17-04-06-900228  training...
+2024-05-11-17-04-06-902352  model folder path
+shape1: torch.Size([4, 240, 240]) torch.Size([240, 240])
+shape2: torch.Size([4, 256, 256]) torch.Size([256, 256])
+shape1: torch.Size([4, 240, 240]) torch.Size([240, 240])
+shape2: torch.Size([4, 256, 256]) torch.Size([256, 256])
+shape1: torch.Size([4, 240, 240]) torch.Size([240, 240])
+shape2: torch.Size([4, 256, 256]) torch.Size([256, 256])
+shape1: torch.Size([4, 240, 240]) torch.Size([240, 240])
+shape2: torch.Size([4, 256, 256]) torch.Size([256, 256])
+2024-05-11-17-04-09-217211  torch.Size([4, 256, 256])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 4, 4])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 512, 8, 8])
+3!: torch.Size([4, 256, 8, 8])
+3!: torch.Size([4, 512, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 16, 16])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 256, 32, 32])
+3!: torch.Size([4, 128, 32, 32])
+3!: torch.Size([4, 256, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 64, 64])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 128, 128])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])
+3!: torch.Size([4, 128, 256, 256])

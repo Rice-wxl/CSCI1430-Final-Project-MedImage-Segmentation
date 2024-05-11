@@ -1,0 +1,80 @@
+2024-05-11-15-58-47-561993  Logging to /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-11-15-58-47-479118_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-11-15-58-47-562977  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-11-15-58-47-572016  log folder path: /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-11-15-58-47-479118_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-11-15-58-47-679233  git commit hash f32096a5e2e1bda9570225ccbea282d0d1233079
+2024-05-11-15-58-47-679696  creating model and diffusion...
+2024-05-11-15-58-55-389640  creating data loader...
+2024-05-11-15-58-55-468859  <generator object load_data at 0x7f1945a877d0>
+2024-05-11-15-58-55-469306  val data shape: <datasets.vaih.VaihDataset object at 0x7f19001e01f0>
+2024-05-11-15-58-55-469717  gpu 0 / 1 val length 68
+2024-05-11-15-58-55-470086  training...
+2024-05-11-15-58-55-483723  model folder path
+2024-05-11-15-59-05-220659  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-28-856803  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-30-042260  Found NaN, decreased lg_loss_scale to 19.001
+2024-05-11-15-59-30-345450  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-31-465894  Found NaN, decreased lg_loss_scale to 18.001
+2024-05-11-15-59-31-757475  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-32-877861  Found NaN, decreased lg_loss_scale to 17.001
+2024-05-11-15-59-33-153333  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-34-270114  Found NaN, decreased lg_loss_scale to 16.001
+2024-05-11-15-59-34-566828  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-35-679980  Found NaN, decreased lg_loss_scale to 15.001000000000001
+2024-05-11-15-59-35-963080  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-37-077895  Found NaN, decreased lg_loss_scale to 14.001000000000001
+2024-05-11-15-59-37-347135  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-38-460902  Found NaN, decreased lg_loss_scale to 13.001000000000001
+2024-05-11-15-59-38-733966  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-39-849520  Found NaN, decreased lg_loss_scale to 12.001000000000001
+2024-05-11-15-59-40-123749  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-41-247418  Found NaN, decreased lg_loss_scale to 11.001000000000001
+2024-05-11-15-59-41-524392  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-42-643442  Found NaN, decreased lg_loss_scale to 10.001000000000001
+2024-05-11-15-59-42-928362  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-44-123703  Found NaN, decreased lg_loss_scale to 9.001000000000001
+2024-05-11-15-59-44-405916  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-46-239291  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-47-692431  Found NaN, decreased lg_loss_scale to 8.002
+2024-05-11-15-59-47-969503  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-49-823115  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-51-677557  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-53-530276  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-55-362182  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-56-548574  Found NaN, decreased lg_loss_scale to 7.0059999999999985
+2024-05-11-15-59-56-811548  torch.Size([4, 1, 256, 256])
+2024-05-11-15-59-58-647977  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-00-504251  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-02-352307  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-04-188950  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-06-013133  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-07-465028  Found NaN, decreased lg_loss_scale to 6.011
+2024-05-11-16-00-07-720982  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-09-528331  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-11-344254  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-13-161108  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-14-963633  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-16-786408  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-18-609218  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-20-430483  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-22-267431  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-24-087204  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-25-913386  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-27-743224  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-29-551336  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-31-367898  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-33-187378  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-35-005503  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-36-843555  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-38-295146  Found NaN, decreased lg_loss_scale to 5.0270000000000055
+2024-05-11-16-00-38-559799  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-40-378465  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-42-196588  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-44-032590  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-45-855086  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-47-675714  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-49-507209  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-51-337218  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-53-164422  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-54-981898  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-56-796087  torch.Size([4, 1, 256, 256])
+2024-05-11-16-00-58-617568  torch.Size([4, 1, 256, 256])

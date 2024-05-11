@@ -1,0 +1,268 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1989920
+##  Job Name : run_vaih
+##  Nodelist : gpu2110
+##      CPUs : 1
+##  Mem/Node : 16384 MB
+## Directory : /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff
+##   Job Started : Sat May 11 05:40:12 PM EDT 2024
+###############################################################################
+2024-05-11-17-40-20-962221  Logging to /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-11-17-40-20-943133_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-11-17-40-20-962411  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-11-17-40-20-966586  log folder path: /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-11-17-40-20-943133_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-11-17-40-20-989041  git commit hash f32096a5e2e1bda9570225ccbea282d0d1233079
+2024-05-11-17-40-20-989130  creating model and diffusion...
+2024-05-11-17-40-22-219249  creating data loader...
+2024-05-11-17-40-22-227640  gpu 0 / 1 val length 4014
+2024-05-11-17-40-22-227737  training...
+2024-05-11-17-40-22-229943  model folder path
+2024-05-11-17-40-29-160293  Found NaN, decreased lg_loss_scale to 19.001
+2024-05-11-17-40-30-326589  Found NaN, decreased lg_loss_scale to 18.001
+2024-05-11-17-40-31-489179  Found NaN, decreased lg_loss_scale to 17.001
+2024-05-11-17-40-32-649778  Found NaN, decreased lg_loss_scale to 16.001
+2024-05-11-17-40-33-813463  Found NaN, decreased lg_loss_scale to 15.001000000000001
+2024-05-11-17-40-35-002862  Found NaN, decreased lg_loss_scale to 14.001000000000001
+2024-05-11-17-40-36-169352  Found NaN, decreased lg_loss_scale to 13.001000000000001
+2024-05-11-17-40-37-325729  Found NaN, decreased lg_loss_scale to 12.001000000000001
+2024-05-11-17-40-38-527783  Found NaN, decreased lg_loss_scale to 11.001000000000001
+2024-05-11-17-40-42-183799  Found NaN, decreased lg_loss_scale to 10.003
+2024-05-11-17-40-45-910284  Found NaN, decreased lg_loss_scale to 9.004999999999999
+2024-05-11-17-40-48-362435  Found NaN, decreased lg_loss_scale to 8.005999999999998
+2024-05-11-17-40-53-300563  Found NaN, decreased lg_loss_scale to 7.008999999999997
+2024-05-11-17-40-58-189438  Found NaN, decreased lg_loss_scale to 6.011999999999998
+2024-05-11-17-41-01-847353  Found NaN, decreased lg_loss_scale to 5.0139999999999985
+2024-05-11-17-41-11-733790  Found NaN, decreased lg_loss_scale to 4.021000000000001
+2024-05-11-17-41-15-367716  Found NaN, decreased lg_loss_scale to 3.0230000000000015
+2024-05-11-17-41-23-997906  Found NaN, decreased lg_loss_scale to 2.029000000000001
+2024-05-11-17-41-58-702573  Found NaN, decreased lg_loss_scale to 1.0559999999999978
+2024-05-11-17-44-36-124732  interval
+----------------------------
+| grad_norm     | 1.98e+05 |
+| lg_loss_scale | 1.18     |
+| loss          | 1.96e+04 |
+| loss_q0       | 2.2e+04  |
+| loss_q1       | 1.7e+04  |
+| loss_q2       | 2.28e+04 |
+| loss_q3       | 1.66e+04 |
+| mse           | 0.299    |
+| mse_q0        | 0.335    |
+| mse_q1        | 0.259    |
+| mse_q2        | 0.348    |
+| mse_q3        | 0.253    |
+| samples       | 804      |
+| step          | 200      |
+| sum           | 1.96e+04 |
+| sum_q0        | 2.2e+04  |
+| sum_q1        | 1.7e+04  |
+| sum_q2        | 2.28e+04 |
+| sum_q3        | 1.66e+04 |
+----------------------------
+2024-05-11-17-44-36-125568  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-17-48-51-414572  interval
+----------------------------
+| grad_norm     | 8.57e+04 |
+| lg_loss_scale | 1.38     |
+| loss          | 2.09e+03 |
+| loss_q0       | 4.84e+03 |
+| loss_q1       | 1.33e+03 |
+| loss_q2       | 1.27e+03 |
+| loss_q3       | 1.22e+03 |
+| mse           | 0.0319   |
+| mse_q0        | 0.0739   |
+| mse_q1        | 0.0202   |
+| mse_q2        | 0.0194   |
+| mse_q3        | 0.0186   |
+| samples       | 1.6e+03  |
+| step          | 400      |
+| sum           | 2.09e+03 |
+| sum_q0        | 4.84e+03 |
+| sum_q1        | 1.33e+03 |
+| sum_q2        | 1.27e+03 |
+| sum_q3        | 1.22e+03 |
+----------------------------
+2024-05-11-17-48-51-415161  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-17-53-00-011524  interval
+----------------------------
+| grad_norm     | 6.57e+04 |
+| lg_loss_scale | 1.58     |
+| loss          | 1.65e+03 |
+| loss_q0       | 4.04e+03 |
+| loss_q1       | 968      |
+| loss_q2       | 789      |
+| loss_q3       | 896      |
+| mse           | 0.0252   |
+| mse_q0        | 0.0616   |
+| mse_q1        | 0.0148   |
+| mse_q2        | 0.012    |
+| mse_q3        | 0.0137   |
+| samples       | 2.4e+03  |
+| step          | 600      |
+| sum           | 1.65e+03 |
+| sum_q0        | 4.04e+03 |
+| sum_q1        | 968      |
+| sum_q2        | 789      |
+| sum_q3        | 896      |
+----------------------------
+2024-05-11-17-53-00-012109  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-17-57-08-973073  interval
+----------------------------
+| grad_norm     | 2.88e+04 |
+| lg_loss_scale | 1.78     |
+| loss          | 817      |
+| loss_q0       | 1.83e+03 |
+| loss_q1       | 631      |
+| loss_q2       | 444      |
+| loss_q3       | 411      |
+| mse           | 0.0125   |
+| mse_q0        | 0.0279   |
+| mse_q1        | 0.00963  |
+| mse_q2        | 0.00677  |
+| mse_q3        | 0.00627  |
+| samples       | 3.2e+03  |
+| step          | 800      |
+| sum           | 817      |
+| sum_q0        | 1.83e+03 |
+| sum_q1        | 631      |
+| sum_q2        | 444      |
+| sum_q3        | 411      |
+----------------------------
+2024-05-11-17-57-08-973670  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-17-57-34-934411  Found NaN, decreased lg_loss_scale to 0.8009999999999158
+2024-05-11-18-01-17-727072  interval
+----------------------------
+| grad_norm     | 4.86e+04 |
+| lg_loss_scale | 0.98     |
+| loss          | 1.44e+03 |
+| loss_q0       | 3.3e+03  |
+| loss_q1       | 798      |
+| loss_q2       | 597      |
+| loss_q3       | 886      |
+| mse           | 0.0219   |
+| mse_q0        | 0.0504   |
+| mse_q1        | 0.0122   |
+| mse_q2        | 0.0091   |
+| mse_q3        | 0.0135   |
+| samples       | 4e+03    |
+| step          | 1e+03    |
+| sum           | 1.44e+03 |
+| sum_q0        | 3.3e+03  |
+| sum_q1        | 798      |
+| sum_q2        | 597      |
+| sum_q3        | 886      |
+----------------------------
+2024-05-11-18-01-17-727660  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-18-05-26-499993  interval
+----------------------------
+| grad_norm     | 2.12e+04 |
+| lg_loss_scale | 1.18     |
+| loss          | 564      |
+| loss_q0       | 1.45e+03 |
+| loss_q1       | 323      |
+| loss_q2       | 245      |
+| loss_q3       | 217      |
+| mse           | 0.0086   |
+| mse_q0        | 0.0221   |
+| mse_q1        | 0.00492  |
+| mse_q2        | 0.00374  |
+| mse_q3        | 0.00331  |
+| samples       | 4.8e+03  |
+| step          | 1.2e+03  |
+| sum           | 564      |
+| sum_q0        | 1.45e+03 |
+| sum_q1        | 323      |
+| sum_q2        | 245      |
+| sum_q3        | 217      |
+----------------------------
+2024-05-11-18-05-26-500593  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-18-09-35-154173  interval
+----------------------------
+| grad_norm     | 2.48e+04 |
+| lg_loss_scale | 1.38     |
+| loss          | 491      |
+| loss_q0       | 1.31e+03 |
+| loss_q1       | 276      |
+| loss_q2       | 202      |
+| loss_q3       | 180      |
+| mse           | 0.00749  |
+| mse_q0        | 0.0201   |
+| mse_q1        | 0.0042   |
+| mse_q2        | 0.00308  |
+| mse_q3        | 0.00275  |
+| samples       | 5.6e+03  |
+| step          | 1.4e+03  |
+| sum           | 491      |
+| sum_q0        | 1.31e+03 |
+| sum_q1        | 276      |
+| sum_q2        | 202      |
+| sum_q3        | 180      |
+----------------------------
+2024-05-11-18-09-35-154782  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-18-13-44-119692  interval
+----------------------------
+| grad_norm     | 2.9e+04  |
+| lg_loss_scale | 1.58     |
+| loss          | 656      |
+| loss_q0       | 1.71e+03 |
+| loss_q1       | 354      |
+| loss_q2       | 256      |
+| loss_q3       | 195      |
+| mse           | 0.01     |
+| mse_q0        | 0.0261   |
+| mse_q1        | 0.0054   |
+| mse_q2        | 0.0039   |
+| mse_q3        | 0.00297  |
+| samples       | 6.4e+03  |
+| step          | 1.6e+03  |
+| sum           | 656      |
+| sum_q0        | 1.71e+03 |
+| sum_q1        | 354      |
+| sum_q2        | 256      |
+| sum_q3        | 195      |
+----------------------------
+2024-05-11-18-13-44-120265  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-18-17-52-972348  interval
+----------------------------
+| grad_norm     | 1.36e+04 |
+| lg_loss_scale | 1.78     |
+| loss          | 314      |
+| loss_q0       | 812      |
+| loss_q1       | 173      |
+| loss_q2       | 105      |
+| loss_q3       | 82.5     |
+| mse           | 0.0048   |
+| mse_q0        | 0.0124   |
+| mse_q1        | 0.00264  |
+| mse_q2        | 0.0016   |
+| mse_q3        | 0.00126  |
+| samples       | 7.2e+03  |
+| step          | 1.8e+03  |
+| sum           | 314      |
+| sum_q0        | 812      |
+| sum_q1        | 173      |
+| sum_q2        | 105      |
+| sum_q3        | 82.5     |
+----------------------------
+2024-05-11-18-17-52-972932  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-18-22-02-613903  interval
+----------------------------
+| grad_norm     | 2.3e+04  |
+| lg_loss_scale | 1.98     |
+| loss          | 483      |
+| loss_q0       | 1.46e+03 |
+| loss_q1       | 187      |
+| loss_q2       | 119      |
+| loss_q3       | 101      |
+| mse           | 0.00737  |
+| mse_q0        | 0.0222   |
+| mse_q1        | 0.00286  |
+| mse_q2        | 0.00181  |
+| mse_q3        | 0.00154  |
+| samples       | 8e+03    |
+| step          | 2e+03    |
+| sum           | 483      |
+| sum_q0        | 1.46e+03 |
+| sum_q1        | 187      |
+| sum_q2        | 119      |
+| sum_q3        | 101      |
+----------------------------
+2024-05-11-18-22-02-614444  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1

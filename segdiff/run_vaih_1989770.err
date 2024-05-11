@@ -1,0 +1,15 @@
+15:4: not a valid test operator:  
+15:4: not a valid test operator: 12.4
+21:4: not a valid test operator: (
+21:4: not a valid test operator: 535.129.03
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 182, in <module>
+[rank0]:     main()
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 79, in main
+[rank0]:     model, diffusion = create_model_and_diffusion(
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/script_util.py", line 72, in create_model_and_diffusion
+[rank0]:     model = create_model(
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/script_util.py", line 128, in create_model
+[rank0]:     raise ValueError(f"unsupported image size: {image_size}")
+[rank0]: ValueError: unsupported image size: 240
+srun: error: gpu2502: task 0: Exited with exit code 1

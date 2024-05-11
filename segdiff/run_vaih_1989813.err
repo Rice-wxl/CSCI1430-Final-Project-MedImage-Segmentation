@@ -1,0 +1,36 @@
+15:4: not a valid test operator:  
+15:4: not a valid test operator: 12.4
+21:4: not a valid test operator: (
+21:4: not a valid test operator: 535.129.03
+0it [00:00, ?it/s][rank0]: Traceback (most recent call last):
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 182, in <module>
+[rank0]:     main()
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 104, in main
+[rank0]:     TrainLoop(
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/train_util.py", line 203, in run_loop
+[rank0]:     batch, cond = next(self.data)
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/train_brats.py", line 154, in load_data
+[rank0]:     yield from loader
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 631, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+[rank0]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+[rank0]:     data = self.dataset.__getitems__(possibly_batched_index)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataset.py", line 419, in __getitems__
+[rank0]:     return [self.dataset[self.indices[idx]] for idx in indices]
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataset.py", line 419, in <listcomp>
+[rank0]:     return [self.dataset[self.indices[idx]] for idx in indices]
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/preprocess_segdiff.py", line 62, in __getitem__
+[rank0]:     res_data,res_seg = self.resize(res_data,res_seg)
+[rank0]:   File "/oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/datasets/transforms.py", line 88, in __call__
+[rank0]:     return F.resize(img, self.size, self.interpolation), F.resize(mask, self.size, Image.NEAREST)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torchvision/transforms/functional.py", line 469, in resize
+[rank0]:     return F_t.resize(img, size=output_size, interpolation=interpolation.value, antialias=antialias)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torchvision/transforms/_functional_tensor.py", line 465, in resize
+[rank0]:     img = interpolate(img, size=size, mode=interpolation, align_corners=align_corners, antialias=antialias)
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/nn/functional.py", line 3961, in interpolate
+[rank0]:     raise ValueError(
+[rank0]: ValueError: Input and output must have the same number of spatial dimensions, but got input with spatial dimensions of [240] and output size of [256, 256]. Please provide input tensor in (N, C, d1, d2, ...,dK) format and output size in (o1, o2, ...,oK) format.
+0it [00:00, ?it/s]
+srun: error: gpu2502: task 0: Exited with exit code 1

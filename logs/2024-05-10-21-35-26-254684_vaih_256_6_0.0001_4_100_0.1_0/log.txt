@@ -1,0 +1,27 @@
+2024-05-10-21-35-26-282641  Logging to /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-21-35-26-254684_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-10-21-35-26-282758  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-10-21-35-26-287193  log folder path: /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-21-35-26-254684_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-10-21-35-26-339734  git commit hash f32096a5e2e1bda9570225ccbea282d0d1233079
+2024-05-10-21-35-26-339803  creating model and diffusion...
+2024-05-10-21-35-27-465877  creating data loader...
+2024-05-10-21-35-27-522044  <generator object load_data at 0x7fab9fe1b530>
+2024-05-10-21-35-27-522108  val data shape: <datasets.vaih.VaihDataset object at 0x7fab7c0298a0>
+2024-05-10-21-35-27-522185  gpu 0 / 1 val length 68
+2024-05-10-21-35-27-522233  training...
+2024-05-10-21-35-27-524515  model folder path
+2024-05-10-21-35-34-716226  Found NaN, decreased lg_loss_scale to 19.001
+2024-05-10-21-35-35-336408  Found NaN, decreased lg_loss_scale to 18.001
+2024-05-10-21-35-35-958316  Found NaN, decreased lg_loss_scale to 17.001
+2024-05-10-21-35-36-578084  Found NaN, decreased lg_loss_scale to 16.001
+2024-05-10-21-35-37-212663  Found NaN, decreased lg_loss_scale to 15.001000000000001
+2024-05-10-21-35-37-874674  Found NaN, decreased lg_loss_scale to 14.001000000000001
+2024-05-10-21-35-38-495160  Found NaN, decreased lg_loss_scale to 13.001000000000001
+2024-05-10-21-35-39-115777  Found NaN, decreased lg_loss_scale to 12.001000000000001
+2024-05-10-21-35-39-739771  Found NaN, decreased lg_loss_scale to 11.001000000000001
+2024-05-10-21-35-40-363317  Found NaN, decreased lg_loss_scale to 10.001000000000001
+2024-05-10-21-35-41-004266  Found NaN, decreased lg_loss_scale to 9.001000000000001
+2024-05-10-21-35-42-403585  Found NaN, decreased lg_loss_scale to 8.002
+2024-05-10-21-35-45-895465  Found NaN, decreased lg_loss_scale to 7.0059999999999985
+2024-05-10-21-35-50-114480  Found NaN, decreased lg_loss_scale to 6.011
+2024-05-10-21-36-02-044478  Found NaN, decreased lg_loss_scale to 5.0270000000000055
+2024-05-10-21-36-46-503699  Found NaN, decreased lg_loss_scale to 4.089000000000026

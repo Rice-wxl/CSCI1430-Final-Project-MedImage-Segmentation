@@ -200,8 +200,9 @@ class TrainLoop:
             # logger.log(f"1")
             self.ddp_model.train()
             # logger.log(f"2")
-            batch, cond, _ = next(self.data)
+            batch, cond = next(self.data)
             # logger.log(f"3")
+            #logger.log(f"{batch.shape}")
             self.run_step(batch, cond)
             # logger.log(f"4")
             if dist.get_rank() == 0:
@@ -273,7 +274,6 @@ class TrainLoop:
             }
             last_batch = (i + self.microbatch) >= batch.shape[0]
             t, weights = self.schedule_sampler.sample(micro.shape[0], dist_util.dev())
-
             compute_losses = functools.partial(
                 self.diffusion.training_losses,
                 self.ddp_model,
@@ -281,7 +281,6 @@ class TrainLoop:
                 t,
                 model_kwargs=micro_cond,
             )
-
             if last_batch or not self.use_ddp:
                 losses = compute_losses()
             else:

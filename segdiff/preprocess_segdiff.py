@@ -4,7 +4,7 @@ import torch
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-
+import torch.nn.functional as F
 def list_nii_files(directory):
     """ Returns a list of paths to NIfTI files in the specified directory. """
     return [os.path.join(directory, f) for f in os.listdir(directory)]
@@ -20,7 +20,6 @@ class NiiDataset(Dataset):
         self.current_folder = None
         self.seg_data = None
         self.combined_array = None
-
     def __len__(self):
         return len(self.data_paths)*155
     
@@ -52,11 +51,23 @@ class NiiDataset(Dataset):
             self.combined_array = np.stack(img_data, axis=-1)#stack all img_data together should have shape (155,240,240,4)
         res_data = self.combined_array[idx%155]
         res_data = np.transpose(res_data,[2,0,1])
+
         res_seg = self.seg_data[idx%155]
+        res_data = torch.as_tensor(res_data)
+        res_seg = torch.as_tensor(res_seg)
+        # print("shape1:",res_data.shape, res_seg.shape)
+        res_data = F.interpolate(res_data.unsqueeze(0), size=(256, 256), mode='bilinear', align_corners=False)
+        res_data = res_data.squeeze(0)
+        res_seg = res_seg.unsqueeze(0).unsqueeze(0)
+        # Resize to [1, 1, 256, 256]
+        res_seg = F.interpolate(res_seg, size=(256, 256), mode='bilinear', align_corners=False)
+        # Optionally remove added dimensions if you need the result as [256, 256]
+        res_seg = res_seg.squeeze(0).squeeze(0)
+        # print("shape2:",res_data.shape, res_seg.shape)
         # if self.transforms:
         #     #augmentation
         #     seg_mask = self.transform(seg_mask)
         #     data = self.transform(data)
-        out_dict = {"conditioned_image": torch.as_tensor(res_data)}
+        out_dict = {"conditioned_image":torch.as_tensor(res_data).float()}
         mask = torch.as_tensor(res_seg)
         return mask, out_dict

@@ -1,0 +1,67 @@
+2024-05-10-22-49-01-005890  Logging to /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-22-49-00-977771_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-10-22-49-01-006014  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-10-22-49-01-012116  log folder path: /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-22-49-00-977771_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-10-22-49-01-040540  git commit hash f32096a5e2e1bda9570225ccbea282d0d1233079
+2024-05-10-22-49-01-040607  creating model and diffusion...
+2024-05-10-22-49-02-326147  creating data loader...
+2024-05-10-22-49-02-367566  <generator object load_data at 0x7f3b3d7738b0>
+2024-05-10-22-49-02-367629  val data shape: <datasets.vaih.VaihDataset object at 0x7f3af80fc190>
+2024-05-10-22-49-02-367700  gpu 0 / 1 val length 68
+2024-05-10-22-49-02-367745  training...
+2024-05-10-22-49-02-370041  model folder path
+2024-05-10-22-49-04-178679  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-07-886473  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-08-517862  Found NaN, decreased lg_loss_scale to 19.001
+2024-05-10-22-49-08-568355  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-09-192857  Found NaN, decreased lg_loss_scale to 18.001
+2024-05-10-22-49-09-253237  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-09-879174  Found NaN, decreased lg_loss_scale to 17.001
+2024-05-10-22-49-09-929977  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-10-559981  Found NaN, decreased lg_loss_scale to 16.001
+2024-05-10-22-49-10-617998  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-11-244713  Found NaN, decreased lg_loss_scale to 15.001000000000001
+2024-05-10-22-49-11-302727  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-11-929533  Found NaN, decreased lg_loss_scale to 14.001000000000001
+2024-05-10-22-49-11-976051  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-12-602802  Found NaN, decreased lg_loss_scale to 13.001000000000001
+2024-05-10-22-49-12-645363  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-13-276187  Found NaN, decreased lg_loss_scale to 12.001000000000001
+2024-05-10-22-49-13-325254  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-13-952282  Found NaN, decreased lg_loss_scale to 11.001000000000001
+2024-05-10-22-49-14-007378  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-14-635431  Found NaN, decreased lg_loss_scale to 10.001000000000001
+2024-05-10-22-49-14-696136  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-15-336427  Found NaN, decreased lg_loss_scale to 9.001000000000001
+2024-05-10-22-49-15-386521  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-16-149245  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-16-838910  Found NaN, decreased lg_loss_scale to 8.002
+2024-05-10-22-49-16-885677  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-17-656406  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-18-430289  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-19-211769  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-19-975476  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-20-622700  Found NaN, decreased lg_loss_scale to 7.0059999999999985
+2024-05-10-22-49-20-664816  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-21-430918  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-22-205561  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-22-970045  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-23-729372  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-24-376625  Found NaN, decreased lg_loss_scale to 6.01
+2024-05-10-22-49-24-419047  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-25-173873  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-25-929064  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-26-686395  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-27-441702  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-28-196239  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-28-952106  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-29-710051  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-30-467710  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-31-228360  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-31-988039  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-32-748979  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-33-508505  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-34-265784  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-35-024373  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-35-780195  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-36-537979  torch.Size([4, 1, 256, 256])
+2024-05-10-22-49-37-298640  torch.Size([4, 1, 256, 256])

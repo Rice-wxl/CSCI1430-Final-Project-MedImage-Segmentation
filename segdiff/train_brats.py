@@ -7,7 +7,7 @@ import datetime
 import json
 import os
 from pathlib import Path
-
+import torch
 import git
 from mpi4py import MPI
 
@@ -27,9 +27,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, random_split
 from preprocess_segdiff import NiiDataset
-
+seed = 0
+torch.manual_seed(seed)
+torch.cuda.manual_seed(seed)
 def main():
 
     ## All the arguments
@@ -39,7 +41,7 @@ def main():
     args.learn_sigma = False
     args.sigma_small = False
     args.num_channels = 128
-    args.image_size = 256
+    args.image_size = 256 # 256
     args.num_res_blocks = 3
     args.noise_schedule = "linear"
     args.rescale_learned_sigmas = False
@@ -83,12 +85,12 @@ def main():
     logger.log("creating data loader...")
 
     dataset = NiiDataset(
-        directory="..."
+        directory="MICCAI_BraTS_2019_Data_Training/HGG"
     )
     val_percent = 0.1
     n_val = int(len(dataset) * val_percent)
     n_train = len(dataset) - n_val
-    train_dataset, val_dataset = 
+    train_dataset, val_dataset = random_split(dataset, [n_train, n_val], generator=torch.Generator().manual_seed(0))
 
     ## Loading the data and the validation data. The data is arleady batched.
     data = load_data(
