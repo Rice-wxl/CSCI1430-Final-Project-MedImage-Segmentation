@@ -257,3 +257,26 @@
 | sum_q3        | 101      |
 ----------------------------
 2024-05-11-18-22-02-614480  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
+2024-05-11-18-26-11-693351  interval
+----------------------------
+| grad_norm     | 2.79e+04 |
+| lg_loss_scale | 2.18     |
+| loss          | 514      |
+| loss_q0       | 1.45e+03 |
+| loss_q1       | 324      |
+| loss_q2       | 144      |
+| loss_q3       | 157      |
+| mse           | 0.00784  |
+| mse_q0        | 0.0221   |
+| mse_q1        | 0.00495  |
+| mse_q2        | 0.0022   |
+| mse_q3        | 0.00239  |
+| samples       | 8.8e+03  |
+| step          | 2.2e+03  |
+| sum           | 514      |
+| sum_q0        | 1.45e+03 |
+| sum_q1        | 324      |
+| sum_q2        | 144      |
+| sum_q3        | 157      |
+----------------------------
+2024-05-11-18-26-11-693697  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1

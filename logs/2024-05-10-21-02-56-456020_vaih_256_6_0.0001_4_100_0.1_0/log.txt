@@ -10,3 +10,19 @@
 2024-05-10-21-02-57-924305  training...
 2024-05-10-21-02-57-926702  model folder path
 2024-05-10-21-03-04-335447  Found NaN, decreased lg_loss_scale to 19.001
+2024-05-10-21-03-05-028204  Found NaN, decreased lg_loss_scale to 18.001
+2024-05-10-21-03-05-717540  Found NaN, decreased lg_loss_scale to 17.001
+2024-05-10-21-03-06-397373  Found NaN, decreased lg_loss_scale to 16.001
+2024-05-10-21-03-07-085362  Found NaN, decreased lg_loss_scale to 15.001000000000001
+2024-05-10-21-03-07-773404  Found NaN, decreased lg_loss_scale to 14.001000000000001
+2024-05-10-21-03-08-456099  Found NaN, decreased lg_loss_scale to 13.001000000000001
+2024-05-10-21-03-09-135523  Found NaN, decreased lg_loss_scale to 12.001000000000001
+2024-05-10-21-03-09-815830  Found NaN, decreased lg_loss_scale to 11.001000000000001
+2024-05-10-21-03-10-503529  Found NaN, decreased lg_loss_scale to 10.001000000000001
+2024-05-10-21-03-11-194308  Found NaN, decreased lg_loss_scale to 9.001000000000001
+2024-05-10-21-03-12-690556  Found NaN, decreased lg_loss_scale to 8.002
+2024-05-10-21-03-15-690626  Found NaN, decreased lg_loss_scale to 7.004999999999999
+2024-05-10-21-03-21-036862  Found NaN, decreased lg_loss_scale to 6.011000000000001
+2024-05-10-21-03-25-626712  Found NaN, decreased lg_loss_scale to 5.016000000000003
+2024-05-10-21-03-40-227288  Found NaN, decreased lg_loss_scale to 4.034000000000009
+2024-05-10-21-04-36-098644  Found NaN, decreased lg_loss_scale to 3.1050000000000324

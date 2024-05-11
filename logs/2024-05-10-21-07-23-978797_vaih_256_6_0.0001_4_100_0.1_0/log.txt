@@ -1,0 +1,50 @@
+2024-05-10-21-07-24-008855  Logging to /oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-21-07-23-978797_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-10-21-07-24-009091  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
+2024-05-10-21-07-24-014215  log folder path: /oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-21-07-23-978797_vaih_256_6_0.0001_4_100_0.1_0
+2024-05-10-21-07-24-065253  git commit hash f32096a5e2e1bda9570225ccbea282d0d1233079
+2024-05-10-21-07-24-065363  creating model and diffusion...
+2024-05-10-21-07-25-264985  creating data loader...
+2024-05-10-21-07-25-329232  <generator object load_data at 0x7f3874fb1af0>
+2024-05-10-21-07-25-329328  val data shape: <datasets.vaih.VaihDataset object at 0x7f38541fdb70>
+2024-05-10-21-07-25-329422  gpu 0 / 1 val length 68
+2024-05-10-21-07-25-329498  training...
+2024-05-10-21-07-25-331728  model folder path
+2024-05-10-21-07-33-059555  Found NaN, decreased lg_loss_scale to 19.001
+2024-05-10-21-07-33-671525  Found NaN, decreased lg_loss_scale to 18.001
+2024-05-10-21-07-34-294575  Found NaN, decreased lg_loss_scale to 17.001
+2024-05-10-21-07-34-904868  Found NaN, decreased lg_loss_scale to 16.001
+2024-05-10-21-07-35-532978  Found NaN, decreased lg_loss_scale to 15.001000000000001
+2024-05-10-21-07-36-154358  Found NaN, decreased lg_loss_scale to 14.001000000000001
+2024-05-10-21-07-36-764090  Found NaN, decreased lg_loss_scale to 13.001000000000001
+2024-05-10-21-07-37-369586  Found NaN, decreased lg_loss_scale to 12.001000000000001
+2024-05-10-21-07-37-983335  Found NaN, decreased lg_loss_scale to 11.001000000000001
+2024-05-10-21-07-38-595076  Found NaN, decreased lg_loss_scale to 10.001000000000001
+2024-05-10-21-07-39-231397  Found NaN, decreased lg_loss_scale to 9.001000000000001
+2024-05-10-21-07-40-592972  Found NaN, decreased lg_loss_scale to 8.002
+2024-05-10-21-07-43-994661  Found NaN, decreased lg_loss_scale to 7.0059999999999985
+2024-05-10-21-07-48-108972  Found NaN, decreased lg_loss_scale to 6.011
+2024-05-10-21-07-59-693178  Found NaN, decreased lg_loss_scale to 5.0270000000000055
+2024-05-10-21-08-19-384369  Found NaN, decreased lg_loss_scale to 4.055000000000015
+2024-05-10-21-09-47-549937  interval
+----------------------------
+| grad_norm     | 1.26e+05 |
+| lg_loss_scale | 4.18     |
+| loss          | 1.17e+04 |
+| loss_q0       | 1.37e+04 |
+| loss_q1       | 9.83e+03 |
+| loss_q2       | 1.34e+04 |
+| loss_q3       | 9.59e+03 |
+| mse           | 0.178    |
+| mse_q0        | 0.209    |
+| mse_q1        | 0.15     |
+| mse_q2        | 0.205    |
+| mse_q3        | 0.146    |
+| samples       | 804      |
+| step          | 200      |
+| sum           | 1.17e+04 |
+| sum_q0        | 1.37e+04 |
+| sum_q1        | 9.83e+03 |
+| sum_q2        | 1.34e+04 |
+| sum_q3        | 9.59e+03 |
+----------------------------
+2024-05-10-21-09-47-550775  class train lr 0.0001, expansion False, rrdb blocks 6 gpus 1
