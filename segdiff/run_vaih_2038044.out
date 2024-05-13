@@ -1,0 +1,21 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 2038044
+##  Job Name : run_vaih
+##  Nodelist : gpu2502
+##      CPUs : 1
+##  Mem/Node : 131072 MB
+## Directory : /oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/segdiff
+##   Job Started : Mon May 13 02:39:20 AM EDT 2024
+###############################################################################
+2024-05-13-02-39-28-976593  Logging to /tmp/openai-2024-05-13-02-39-28-976436
+2024-05-13-02-39-28-976802  {'clip_denoised': False, 'num_samples': 10000, 'batch_size': 4, 'use_ddim': False, 'model_path': '/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-13-01-23-09-042170_vaih_256_6_0.0001_4_100_0.1_0/model_5000.pt', 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None, 'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 1000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001}
+2024-05-13-02-39-28-995322  Logging to /users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-13-01-23-09-042170_vaih_256_6_0.0001_4_100_0.1_0/model_5000_major_vote
+2024-05-13-02-39-28-995442  creating model and diffusion...
+2024-05-13-02-39-31-621129  sampling major vote val
+2024-05-13-02-40-37-696477  0 iou 0.07190814440011677, f1_Score 0.1341684822076979, WCov 0.07190814440011677, boundF 0.0
+2024-05-13-02-41-42-537535  1 iou 0.8199673529566637, f1_Score 0.9010791887278304, WCov 0.8199673529566637, boundF 0.19100936035197877
+2024-05-13-02-42-47-408588  0 iou 0.7714336377338417, f1_Score 0.8709709709709709, WCov 0.7771847898599066, boundF 0.2961908008539714
+2024-05-13-02-43-52-200329  0 iou 0.765547721772072, f1_Score 0.8672070568601741, WCov 0.7944385026737968, boundF 0.27146189821406147
+2024-05-13-02-44-57-033664  0 iou 0.5428486997635934, f1_Score 0.7036966098448573, WCov 0.5476508077664147, boundF 0.021930194427396976
+2024-05-13-02-46-01-859897  1 iou 0.753129302791338, f1_Score 0.8591828356210842, WCov 0.9461891197109706, boundF 0.16158175163521724
+2024-05-13-02-47-06-694136  0 iou 0.5640392822253072, f1_Score 0.7212597389789276, WCov 0.5658104699644825, boundF 0.016121850074361822

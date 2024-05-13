@@ -65,7 +65,8 @@ def sampling_major_vote_func(diffusion_model, ddp_model, output_folder, dataset,
                 range(n_rounds), desc="Generating image samples for FID evaluation."
         ):
             gt_mask, condition_on, name = next(loader_iter)
-            set_random_seed_for_iterations(step + int(name[0].split("_")[1]))
+            # set_random_seed_for_iterations(step + int(name[0].split("_")[1]))
+            set_random_seed_for_iterations(0)
             gt_mask = (gt_mask + 1.0) / 2.0
             condition_on = condition_on["conditioned_image"]
             former_frame_for_feature_extraction = condition_on.to(dist_util.dev())
@@ -74,16 +75,21 @@ def sampling_major_vote_func(diffusion_model, ddp_model, output_folder, dataset,
                 gt_img = Image.fromarray(gt_mask[i][0].detach().cpu().numpy().astype('uint8'))
                 gt_img.putpalette(cityspallete)
                 gt_img.save(
-                    os.path.join(output_folder, f"{name[i]}_gt_palette.png"))
+                    # os.path.join(output_folder, f"{name[i]}_gt_palette.png"))
+                    os.path.join(output_folder, f"{i}_gt_palette.png"))
                 gt_img = Image.fromarray((gt_mask[i][0].detach().cpu().numpy() - 1).astype(np.uint8))
                 gt_img.save(
-                    os.path.join(output_folder, f"{name[i]}_gt.png"))
+                    # os.path.join(output_folder, f"{name[i]}_gt.png"))
+                    os.path.join(output_folder, f"{i}_gt.png"))
 
             for i in range(condition_on.shape[0]):
-                denorm_condition_on = denormalize(condition_on.clone(), mean=dataset.mean, std=dataset.std)
+                # denorm_condition_on = denormalize(condition_on.clone(), mean=dataset.mean, std=dataset.std)
+                denorm_condition_on = condition_on.clone()
                 tvu.save_image(
                     denorm_condition_on[i,] / 255.,
-                    os.path.join(output_folder, f"{name[i]}_condition_on.png")
+                    # os.path.join(output_folder, f"{name[i]}_condition_on.png")
+                    os.path.join(output_folder, f"{i}_condition_on.png")
+
                 )
 
             if isinstance(dataset, MonuDataset):
@@ -169,10 +175,13 @@ def sampling_major_vote_func(diffusion_model, ddp_model, output_folder, dataset,
                 out_img = Image.fromarray(x[i][0].detach().cpu().numpy().astype('uint8'))
                 out_img.putpalette(cityspallete)
                 out_img.save(
-                    os.path.join(output_folder, f"{name[i]}_model_output_palette.png"))
+                    # os.path.join(output_folder, f"{name[i]}_model_output_palette.png"))
+                    os.path.join(output_folder, f"{i}_model_output_palette.png"))
+                
                 out_img = Image.fromarray((x[i][0].detach().cpu().numpy() - 1).astype(np.uint8))
                 out_img.save(
-                    os.path.join(output_folder, f"{name[i]}_model_output.png"))
+                    # os.path.join(output_folder, f"{name[i]}_model_output.png"))
+                    os.path.join(output_folder, f"{i}_model_output.png"))
 
             for index, (gt_im, out_im) in enumerate(zip(gt_mask, x)):
 
@@ -183,7 +192,8 @@ def sampling_major_vote_func(diffusion_model, ddp_model, output_folder, dataset,
                 fbound_list.append(fbound)
 
                 logger.info(
-                    f"{name[index]} iou {miou_list[-1]}, f1_Score {f1_score_list[-1]}, WCov {wcov_list[-1]}, boundF {fbound_list[-1]}")
+                    # f"{[index]} iou {miou_list[-1]}, f1_Score {f1_score_list[-1]}, WCov {wcov_list[-1]}, boundF {fbound_list[-1]}")
+                    f"{index} iou {miou_list[-1]}, f1_Score {f1_score_list[-1]}, WCov {wcov_list[-1]}, boundF {fbound_list[-1]}")
 
     my_length = len(miou_list)
     length_of_data = torch.tensor(len(miou_list), device=dist_util.dev())

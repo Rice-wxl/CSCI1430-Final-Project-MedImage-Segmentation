@@ -203,7 +203,7 @@ class GaussianDiffusion:
             _extract_into_tensor(self.sqrt_alphas_cumprod, t, x_start.shape) * x_start
             + _extract_into_tensor(self.sqrt_one_minus_alphas_cumprod, t, x_start.shape)
             * noise
-        ).float() # ???
+        )
 
     def q_posterior_mean_variance(self, x_start, x_t, t):
         """
@@ -738,14 +738,9 @@ class GaussianDiffusion:
                 ModelMeanType.START_X: x_start,
                 ModelMeanType.EPSILON: noise,
             }[self.model_mean_type]
-            # print("1?:",model_output.shape)
-            # print("2?:",target.shape)
-            # print("3?:",x_start.shape)
-            model_output = model_output.squeeze(1)    
             assert model_output.shape == target.shape == x_start.shape
             terms["mse"] = mean_flat((target - model_output) ** 2)
-            terms["sum"] = (target - model_output).pow(2).sum(dim=(1, 2))
-            # terms["sum"] = (target - model_output).pow(2).sum(dim=(1, 2, 3))
+            terms["sum"] = (target - model_output).pow(2).sum(dim=(1, 2, 3))
             if "vb" in terms:
                 terms["loss"] = terms["mse"] + terms["vb"]
             else:

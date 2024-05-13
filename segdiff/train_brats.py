@@ -7,7 +7,7 @@ import datetime
 import json
 import os
 from pathlib import Path
-import torch
+
 import git
 from mpi4py import MPI
 
@@ -27,11 +27,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-from torch.utils.data import DataLoader, random_split
+from torch.utils.data import DataLoader
 from preprocess_segdiff import NiiDataset
-seed = 0
-torch.manual_seed(seed)
-torch.cuda.manual_seed(seed)
+
 def main():
 
     ## All the arguments
@@ -41,7 +39,7 @@ def main():
     args.learn_sigma = False
     args.sigma_small = False
     args.num_channels = 128
-    args.image_size = 256 # 256
+    args.image_size = 256
     args.num_res_blocks = 3
     args.noise_schedule = "linear"
     args.rescale_learned_sigmas = False
@@ -91,12 +89,12 @@ def main():
     ## Step 4: feed in to Trainloop
 
     dataset = NiiDataset(
-        directory="MICCAI_BraTS_2019_Data_Training/HGG"
+        directory="..."
     )
     val_percent = 0.1
     n_val = int(len(dataset) * val_percent)
     n_train = len(dataset) - n_val
-    train_dataset, val_dataset = random_split(dataset, [n_train, n_val], generator=torch.Generator().manual_seed(0))
+    train_dataset, val_dataset = 
 
     ## Loading the data and the validation data. The data is arleady batched.
     data = load_data(
@@ -135,7 +133,7 @@ def main():
     ).run_loop(max_iter=300000, start_print_iter=args.start_print_iter)
 
 def load_data(
-    *, batch_size, dataset, deterministic=False
+    *, data_dir, batch_size, image_size, class_cond=False, deterministic=False
 ):
     """
     For a dataset, create a generator over (images, kwargs) pairs.
@@ -147,9 +145,19 @@ def load_data(
 
     :param data_dir: a dataset directory.
     :param batch_size: the batch size of each returned pair.
+    :param image_size: the size to which images are resized.
+    :param class_cond: if True, include a "y" key in returned dicts for class
+                       label. If classes are not available and this is true, an
+                       exception will be raised.
     :param deterministic: if True, yield results in a deterministic order.
     """
 
+    dataset = VaihDataset(
+        mode='train',
+        image_size=image_size,
+        shard=MPI.COMM_WORLD.Get_rank(),
+        num_shards=MPI.COMM_WORLD.Get_size(),
+    )
     if deterministic:
         loader = DataLoader(
             dataset, batch_size=batch_size, shuffle=False, num_workers=0, drop_last=True
@@ -160,6 +168,7 @@ def load_data(
         )
     while True:
         yield from loader
+
 
 def create_argparser():
     defaults = dict(

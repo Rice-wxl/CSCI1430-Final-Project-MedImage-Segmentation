@@ -1,0 +1,16 @@
+15:4: not a valid test operator:  
+15:4: not a valid test operator: 12.4
+21:4: not a valid test operator: (
+21:4: not a valid test operator: 535.129.03
+Generating image samples for FID evaluation.:   0%|          | 0/378 [00:00<?, ?it/s]Generating image samples for FID evaluation.:   0%|          | 0/378 [00:00<?, ?it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/val_isic.py", line 88, in <module>
+[rank0]:     main()
+[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/val_isic.py", line 66, in main
+[rank0]:     sampling_major_vote_func(diffusion, model, str(logs_path / "major_vote"), test_dataset, logger, args.clip_denoised,
+[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/sampling_util.py", line 69, in sampling_major_vote_func
+[rank0]:     set_random_seed_for_iterations(step + int(name[0].split("_")[1]))
+[rank0]:   File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 890, in split
+[rank0]:     return torch._VF.split_with_sizes(self, split_size, dim)
+[rank0]: TypeError: split_with_sizes(): argument 'split_sizes' (position 2) must be tuple of ints, not str
+srun: error: gpu2502: task 0: Exited with exit code 1
