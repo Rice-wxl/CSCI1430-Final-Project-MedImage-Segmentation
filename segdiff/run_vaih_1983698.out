@@ -1,51 +1,0 @@
-## SLURM PROLOG ###############################################################
-##    Job ID : 1983698
-##  Job Name : run_vaih
-##  Nodelist : gpu2102
-##      CPUs : 1
-##  Mem/Node : 16384 MB
-## Directory : /oscar/home/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff
-##   Job Started : Fri May 10 12:05:30 PM EDT 2024
-###############################################################################
-15:4: not a valid test operator:  
-15:4: not a valid test operator: 12.4
-21:4: not a valid test operator: (
-21:4: not a valid test operator: 535.129.03
-2024-05-10-12-05-42-785260  Logging to /users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-12-05-42-727315_vaih_256_6_0.0001_4_100_0.1_0
-2024-05-10-12-05-42-785463  {'data_dir': '', 'schedule_sampler': 'uniform', 'lr': 0.0001, 'weight_decay': 0.0, 'lr_anneal_steps': 0, 'clip_denoised': False, 'batch_size': 4, 'microbatch': -1, 'ema_rate': '0.9999', 'save_interval': 5000, 'start_print_iter': 75000, 'log_interval': 200, 'run_without_test': False, 'resume_checkpoint': '', 'use_fp16': True, 'fp16_scale_growth': 0.001, 'image_size': 256, 'num_channels': 128, 'num_res_blocks': 3, 'num_heads': 4, 'num_heads_upsample': -1, 'attention_resolutions': '16,8', 'dropout': 0.1, 'rrdb_blocks': 6, 'deeper_net': True, 'learn_sigma': False, 'sigma_small': False, 'class_cond': False, 'class_name': 'train', 'expansion': False, 'diffusion_steps': 100, 'noise_schedule': 'linear', 'timestep_respacing': '', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': False, 'rescale_learned_sigmas': False, 'use_checkpoint': False, 'use_scale_shift_norm': False, 'seed': None}
-2024-05-10-12-05-42-823958  log folder path: /users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/logs/2024-05-10-12-05-42-727315_vaih_256_6_0.0001_4_100_0.1_0
-2024-05-10-12-05-42-909760  git commit hash 5b5e1261b10338c69ccb46ddebf49f6441adeb11
-2024-05-10-12-05-42-909851  creating model and diffusion...
-2024-05-10-12-05-44-105842  creating data loader...
-2024-05-10-12-05-44-193265  gpu 0 / 1 val length 68
-2024-05-10-12-05-44-193350  training...
-2024-05-10-12-05-44-195605  model folder path
-1
-2
-3
-batch size: 4
-microbatch: 4
-0it [00:00, ?it/s]
-2024-05-10-12-05-46-003257  a
-2024-05-10-12-05-46-003632  b
-2024-05-10-12-05-46-003995  c
-2024-05-10-12-05-46-004063  d
-2024-05-10-12-05-46-004409  e
-2024-05-10-12-05-46-004503  f
-2024-05-10-12-05-46-004551  first
-2024-05-10-12-05-48-977381  g
-2024-05-10-12-05-48-977705  h
-  0%|          | 0/1 [00:00<?, ?it/s][A
-100%|██████████| 1/1 [00:05<00:00,  5.24s/it][A100%|██████████| 1/1 [00:05<00:00,  5.24s/it]
-[rank0]: Traceback (most recent call last):
-[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/image_train_diff_vaih.py", line 152, in <module>
-[rank0]:     main()
-[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/image_train_diff_vaih.py", line 100, in main
-[rank0]:     TrainLoop(
-[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/train_util.py", line 205, in run_loop
-[rank0]:     self.run_step(batch, cond)
-[rank0]:   File "/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/segdiff/improved_diffusion/train_util.py", line 260, in run_step
-[rank0]:     assert 1 == 2
-[rank0]: AssertionError
-0it [00:05, ?it/s]
-srun: error: gpu2102: task 0: Exited with exit code 1

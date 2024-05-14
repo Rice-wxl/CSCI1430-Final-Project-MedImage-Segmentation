@@ -1,0 +1,9 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 2066325
+##  Job Name : run_vaih
+##  Nodelist : gpu2115
+##      CPUs : 1
+##  Mem/Node : 131072 MB
+## Directory : /oscar/scratch/mxiangxi/CSCI1430-Final-Project-MedImage-Segmentation/segdiff
+##   Job Started : Mon May 13 09:39:00 PM EDT 2024
+###############################################################################

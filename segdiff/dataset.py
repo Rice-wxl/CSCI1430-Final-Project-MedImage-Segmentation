@@ -8,6 +8,7 @@ import pandas as pd
 import random
 import torchvision.transforms.functional as F
 from torchvision import transforms
+import matplotlib.pyplot as plt
 
 
 class ISICDataset(Dataset):
@@ -39,7 +40,6 @@ class ISICDataset(Dataset):
             label = 0 if self.label_list[index] == 'benign' else 1
         else:
             label = int(self.label_list[index])
-
         if self.transform:
             # save random state so that if more elaborate transforms are used
             # the same transform will be applied to both the mask and the img
@@ -52,8 +52,7 @@ class ISICDataset(Dataset):
                 mask = F.vflip(mask)
         
         out_dict = {"conditioned_image": img}
-
-        return mask, out_dict, label
+        return mask, out_dict, name
 
 
 class GenericNpyDataset(torch.utils.data.Dataset):

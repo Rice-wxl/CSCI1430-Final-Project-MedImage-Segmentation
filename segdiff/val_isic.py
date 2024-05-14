@@ -52,7 +52,7 @@ def main():
 
     test_dataset = ISICDataset(
         training=False,
-        data_path="/users/xwang259/CSCI1430-Final-Project-MedImage-Segmentation/CSCI1430-Final-Project-MedImage-Segmentation/data/ISIC",
+        data_path="../data/ISIC",
         csv_file="ISBI2016_ISIC_Part3B_Test_GroundTruth.csv",
         img_folder="ISBI2016_ISIC_Part3B_Test_Data",
         transform=transform_train,

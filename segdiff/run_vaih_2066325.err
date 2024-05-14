@@ -1,0 +1,7 @@
+15:4: not a valid test operator:  
+15:4: not a valid test operator: 12.4
+21:4: not a valid test operator: (
+21:4: not a valid test operator: 535.129.03
+srun: Job step aborted: Waiting up to 182 seconds for job step to finish.
+slurmstepd: error: *** STEP 2066325.0 ON gpu2115 CANCELLED AT 2024-05-13T21:39:52 ***
+slurmstepd: error: *** JOB 2066325 ON gpu2115 CANCELLED AT 2024-05-13T21:39:52 ***
