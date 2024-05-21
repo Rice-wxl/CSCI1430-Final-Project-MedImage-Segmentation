@@ -1,5 +1,7 @@
 # CSCI1430-Final-Project-MedImage-Segmentation
 
+Link to the writeup for this project: [CS1430 Final Project Writeup](CS1430FinalProjectWriteup.pdf)
+
 Running OSCAR Script: torch.cuda.is_available() = False
 
 Container: search example container on oscar ccv
